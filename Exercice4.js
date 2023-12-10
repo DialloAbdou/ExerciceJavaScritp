@@ -9,9 +9,9 @@ AffichageCoordonnees(v3.nom, v3.lat,v3.long)
 
 function AffichageCoordonnees(nom, lat, long)
 {
-    console.log(`-----${nom}-----`)
+    let nom1 = nom.padStart(10,"-");
+    let nom2 = nom1.padEnd(10,"-");
+    console.log(`${nom2}`)
     console.log(`Latitude : ${lat}`)
     console.log(`Longitude : ${long}`)
-
-
 }

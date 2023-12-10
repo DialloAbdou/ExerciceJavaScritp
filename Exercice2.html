@@ -14,20 +14,18 @@
         <div id="resultat"></div>
         <script >
             const inputNumbre = document.querySelector("#factorielle");
-            const btn = document.querySelector(".btn")
-            const divResultat = document.querySelector("#resultat")
-            btn.addEventListener("click",function()
-            {
-                const nombre = inputNumbre.value;
-                let result=1;
-                for(let i = 1; i<=nombre; i++)
+            const btn = document.querySelector(".btn");
+            const resultat = document.querySelector("#resultat");
+         
+            btn.addEventListener( "click",function(){
+                nbre = inputNumbre.value;
+                let result = 1;
+                for( let i = 1; i<nbre; i++)
                 {
                     result*=i;
                 }
-                divResultat.innerHTML = " Factorielle"+ nombre + " est :" +result;
-
-            });
- 
+                resultat.innerHTML= `factorielle est : ${result}`
+            })
         </script>
     </body>
 </html>

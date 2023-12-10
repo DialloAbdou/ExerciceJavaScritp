@@ -9,11 +9,9 @@
     <label>Saisir le rayon : </label>
     <input type="number" id="rayon" onchange="calcul()"/>
     <br />
-    <label>case à coher: </label>
+    <label>Perimètre : </label>
     <input type="checkbox" id="perimetre" checked onchange="calcul()">
-    <div id="resultat">
-
-    </div>
+    <div id="resultat"></div>
     <script>
         const nb = document.querySelector("#rayon");
         const divResultat = document.querySelector("#resultat");
@@ -21,29 +19,26 @@
 
         function calcul(){
             let resultat = 0;
-            let color = "blue";
+            let color = "Red";
             let texte = "Perimetre";
             if(perimetreCheckbox.checked){
                 resultat = perimetre(nb.value);
-                
             } else {
                 resultat = aire(nb.value);
-                color = "red";
-                texte = "Aire"
+                color = "Blue";
+                texte = "Aire";
             }
             divResultat.innerHTML = affichageResultat(color,texte,resultat);
         }
         function affichageResultat(color,texte,resultat){
-            affichage =`<div style='color:${color}'>${texte} : ${resultat}</div>`
-            return affichage;
+            return `<div style='color:${color}'>${resultat}</div>`
         }
         function perimetre(x){
-            return  (Math.PI * x * 2);
+            return "Périmètre : " + (Math.PI * x * 2);
         }
         function aire(x){
-            return  (Math.PI * Math.pow(x,2));
+            return "Aire : " + (Math.PI * Math.pow(x,2));
         }
-
     </script>
 </body>
 </html>
